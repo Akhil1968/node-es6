@@ -5,7 +5,7 @@ import bodyparser from 'body-parser';
 import session from 'express-session';
 import net from 'net';
 
-let app = express();
+const app = express();
 app.use(express.static(__dirname + "/public"));
 
 app.use(bodyparser.json());
@@ -13,12 +13,12 @@ app.use(bodyparser.urlencoded({extended:false}));
 
 app.use(session({secret: "secret",  resave : true,  saveUninitialized : false}));
 
-let routes = require('./routes/routes.js');
+const routes = require('./routes/routes.js');
 
 app.set('view engine', 'handlebars');
 app.engine('handlebars', handlebars({ 
                           defaultLayout: 'layout',
-                          layoutsDir:    __dirname + '/views/layouts',
+                          layoutsDir:  __dirname + '/views/layouts',
                           partialsDir: __dirname + '/views/partials'
                          }));
 

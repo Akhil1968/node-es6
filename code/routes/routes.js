@@ -12,7 +12,7 @@ exports.landingHandler = function(req, res){
 	// user comes to this handler after login, set loggedin variable in session to true.
 	req.session.loggedin = true;
 
-	var person;
+	let person;
 	if (req.session.userName){   //session store has userName
 		console.log("User Name already in session. It is " + req.session.userName);
 		person = req.session.userName;
@@ -28,10 +28,10 @@ exports.landingHandler = function(req, res){
 }//landingHandler
 
 exports.cityHandler = function(req, res){
-	var interestValue = req.body.interest;
-	var cityNameValue, taglineValue;
+	const interestValue = req.body.interest;
+	let cityNameValue, taglineValue;
 	console.log("received interestValue  as " + interestValue);
-	var imageArray = [];
+	let imageArray = [];
 
 	if (interestValue === 'history'){
 		cityNameValue = 'Rome';
