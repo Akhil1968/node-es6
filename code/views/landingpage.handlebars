@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-0 panel panel-default">
+      <p class="help-block text-center cursive-text-small">
+          Hi {{welcomeMessage}}!, Depending on your interest, I'll take you to a city.  
+      </p>
+      <form class="margin-base-vertical" method="post" action="/toCity" role="form">
+        <div class="form-group"> 
+          <label for="interest" class="cursive-text-small">What's your interest?</label>
+          <select  required class="form-control" name="interest" id="interest" >
+            <option value="finance">Business</option>
+            <option value="fashion">Fashion</option>
+            <option value="history">History</option>
+          </select>
+        </div>
+        <p class="text-center">
+          <button type="submit" class="btn btn-success btn-lg">Submit</button>
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
+
+
